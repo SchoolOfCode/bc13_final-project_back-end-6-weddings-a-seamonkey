@@ -4,25 +4,27 @@ import {pool} from '../db/index.js'
 
 export async function getProduct (searchTerm) {
 
-    const productQuery = await pool.query('SELECT * FROM foods WHERE product_name ILIKE $1;', [`'%${searchTerm}%'`]);
+    const productQuery = await pool.query('SELECT * FROM foods WHERE product_name ILIKE $1;', [`%${searchTerm}%`]);
     const barcodeQuery = await pool.query('SELECT * FROM foods WHERE barcode_number = $1;', [searchTerm]);
     const productArr = productQuery.rows;
+    console.log(searchTerm)
     function containsOnlyNumbers(str) {
         return /^\d+$/.test(str);
       }
    
-    if (containsOnlyNumbers(searchTerm) == false) {
-        console.log(productQuery)
-        return productQuery.rows
+    if (containsOnlyNumbers(searchTerm) == true) {
+        console.log(barcodeQuery.rows)
+        return barcodeQuery.rows
     }
 
     else {
-        console.log(barcodeQuery.rows)
-        return barcodeQuery.rows
-        
+        console.log(productArr)
+        return productArr
     }
 
 }
+
+
 
 export async function getAll () {
 
