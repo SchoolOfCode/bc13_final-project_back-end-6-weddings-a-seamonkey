@@ -1,5 +1,6 @@
 import {pool} from '../db/index.js'
 
+
 // I heart github
 
 export async function getProduct (searchTerm) {
@@ -26,10 +27,13 @@ export async function getProduct (searchTerm) {
 
 
 
+
 export async function getAll () {
 
     const result = await pool.query('SELECT * FROM foods')
     console.log(result.rows)
     return result.rows
+
 }
+
 
