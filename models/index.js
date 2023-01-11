@@ -6,7 +6,7 @@ export async function getProduct (searchTerm) {
     const barcodeQuery = await pool.query('SELECT * FROM foods WHERE barcode_number ILIKE $1;', [`%${searchTerm}%`]);
     const productArr = productQuery.rows;
    
-    if (typeof Number (searchTerm) === Number) {
+    if (typeof Number (searchTerm) === 'number') {
         console.log(barcodeQuery.rows)
         return barcodeQuery.rows
     }
