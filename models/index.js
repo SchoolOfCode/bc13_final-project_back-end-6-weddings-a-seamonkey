@@ -7,15 +7,19 @@ export async function getProduct (searchTerm) {
     const productQuery = await pool.query('SELECT * FROM foods WHERE product_name ILIKE $1;', [`'%${searchTerm}%'`]);
     const barcodeQuery = await pool.query('SELECT * FROM foods WHERE barcode_number = $1;', [searchTerm]);
     const productArr = productQuery.rows;
+    function containsOnlyNumbers(str) {
+        return /^\d+$/.test(str);
+      }
    
-    if (typeof Number (searchTerm) === 'number') {
-        console.log(barcodeQuery.rows)
-        return barcodeQuery.rows
+    if (containsOnlyNumbers(searchTerm) == false) {
+        console.log(productQuery)
+        return productQuery.rows
     }
 
     else {
-        console.log(productArr)
-        return productQuery.rows
+        console.log(barcodeQuery.rows)
+        return barcodeQuery.rows
+        
     }
 
 }
