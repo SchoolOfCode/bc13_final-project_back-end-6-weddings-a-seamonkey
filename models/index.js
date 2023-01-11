@@ -3,7 +3,7 @@ import {pool} from '../db/index.js'
 export async function getProduct (searchTerm) {
 
     const productQuery = await pool.query('SELECT * FROM foods WHERE product_name ILIKE $1;', [`%${searchTerm}%`]);
-    const barcodeQuery = await pool.query('SELECT * FROM foods WHERE barcode_number ILIKE $1;', [`%${searchTerm}%`]);
+    const barcodeQuery = await pool.query('SELECT * FROM foods WHERE barcode_number = $1;', [searchTerm]);
     const productArr = productQuery.rows;
    
     if (typeof Number (searchTerm) === 'number') {
