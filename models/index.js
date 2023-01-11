@@ -14,7 +14,7 @@ export async function getProduct (searchTerm) {
     }
 
     else {
-        console.log(barcodeQuery.rows)
+        console.log(productArr)
         return productQuery.rows
     }
 
