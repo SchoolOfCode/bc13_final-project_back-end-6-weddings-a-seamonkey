@@ -1,5 +1,7 @@
 import {pool} from '../db/index.js'
 
+// I heart github
+
 export async function getProduct (searchTerm) {
 
     const productQuery = await pool.query('SELECT * FROM foods WHERE product_name ILIKE $1;', [`%${searchTerm}%`]);
