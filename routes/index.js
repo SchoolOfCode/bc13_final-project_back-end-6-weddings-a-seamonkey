@@ -1,7 +1,7 @@
 import express from 'express'
 export const router = express.Router()
 
-import { getAll, getProduct } from '../models/index.js'
+import { getAll, getProduct, deleteListItem } from '../models/index.js'
 
 router.get('/foods/:searchTerm', async (req, res) => {
 
@@ -15,4 +15,24 @@ router.get('/foods/', async (req, res) => {
     const data = await getAll(req)
     res.json({success: true, payload: data})
     console.log(data)
+})
+
+router.get('/userproducts/:userID', async (req, res) => {
+
+    const data = await getUserProductList(req.params.userID)
+    res.json({success: true, payload: data})
+    console.log(data)
+})
+
+router.post('/userproducts/:productName/:userID', async (req, res) => {
+
+    const data = await postListItem(req.params.productName, req.params.userID)
+    res.json({success: true, payload: data})
+    console.log(data)
+})
+
+router.delete('/userproducts/:productName/:userID', async (req, res) => {
+
+    const data = await deleteListItem(req.params.productName, req.params.userID)
+    res.json({success:true, payload: data})
 })
