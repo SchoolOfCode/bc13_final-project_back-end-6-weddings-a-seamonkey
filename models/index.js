@@ -1,3 +1,4 @@
+
 import {pool} from '../db/index.js'
 
 
@@ -47,7 +48,9 @@ export async function postListItem (userID, productName) {
 }
 
 export async function getUserProductList (userID) {
-
-    const result = await pool.query('SELECT * FROM user_products WHERE user_id = $1 RETURNING *; ', [userID] );
+   
+    const result = await pool.query('SELECT * FROM user_products WHERE user_id = $1; ', [userID] );
+    
     return result.rows
+    
 }
