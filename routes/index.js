@@ -1,7 +1,7 @@
 import express from 'express'
 export const router = express.Router()
 
-import { getAll, getProduct } from '../models/index.js'
+import { getAll, getProduct , getUserProductList, postListItem } from '../models/index.js'
 
 router.get('/foods/:searchTerm', async (req, res) => {
 

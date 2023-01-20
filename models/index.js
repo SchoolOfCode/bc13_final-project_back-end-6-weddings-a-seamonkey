@@ -42,12 +42,12 @@ export async function getAll () {
 
 export async function postListItem (userID, productName) {
 
-    const result = await pool.query('INSERT INTO user_products (product_name, user_id) VALUES ($1,$2);', [productName, userID]);
+    const result = await pool.query('INSERT INTO user_products (product_name, user_id) VALUES ($2,$1);', [productName, userID]);
     return result.rows
 }
 
 export async function getUserProductList (userID) {
 
-    const result = await pool.query('SELECT * FROM user_products WHERE user_id = $1;', [userID]);
+    const result = await pool.query('SELECT * FROM user_products WHERE user_id = $1 RETURNING *; ', [userID] );
     return result.rows
 }
