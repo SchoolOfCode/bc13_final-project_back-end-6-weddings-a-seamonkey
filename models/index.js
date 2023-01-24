@@ -11,20 +11,20 @@ export async function getProduct (searchTerm) {
 
     const productArr = productQuery.rows[0];
 
-    console.log(searchTerm)
+    // console.log(searchTerm)
     function containsOnlyNumbers(str) {
         return /^\d+$/.test(str);
       }
    
     if (containsOnlyNumbers(searchTerm) == true) {
-        console.log(barcodeQuery.rows)
+        // console.log(barcodeQuery.rows)
 
         return barcodeQuery.rows[0]
 
     }
 
     else {
-        console.log(productArr)
+        // console.log(productArr)
         return productArr
     }
 
@@ -36,7 +36,7 @@ export async function getProduct (searchTerm) {
 export async function getAll () {
 
     const result = await pool.query('SELECT * FROM foods')
-    console.log(result.rows)
+    // console.log(result.rows)
     return result.rows
 
 }
@@ -44,7 +44,7 @@ export async function getAll () {
 export async function postListItem (userID, productName) {
 
 
-    const result = await pool.query('INSERT INTO user_products (product_name, user_id) VALUES ($1,$2);', [productName, userID]);
+    const result = await pool.query('INSERT INTO user_products (product_name, user_id) VALUES ($1,$2) RETURNING*;', [productName, userID]);
     return result.rows
 }
 
