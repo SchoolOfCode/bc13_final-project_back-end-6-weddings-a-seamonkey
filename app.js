@@ -7,7 +7,6 @@ import cors from "cors";
 import {router}  from "./routes/index.js";
 
 
-
 // Using cors to avoid localhost issue
 // https://expressjs.com/en/resources/middleware/cors.html
 app.use(cors());
@@ -22,9 +21,4 @@ app.use(morgan("dev"));
 
 app.use("/api", router);
 
-
-
-
-  // hello 
-
-  export default app
+export default app
