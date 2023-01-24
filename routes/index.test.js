@@ -27,6 +27,7 @@ test('POST/foods/endpoint returns 200 status code', async ()=>{
     });
 })
 
+
 test('GET/userproducts/id endpoint returns 200 status code and list of user products', async ()=>{
 
     const id = "admin"
@@ -51,6 +52,7 @@ test('Delete foods/endpoint returns 200 status', async ()=>{
         payload: [{"item_id": expect.any(Number), "product_name": "apple", "bad": null, "good": null, "user_id": "admin", }]
     })
 })
+
 
 afterAll(async function () {
 	//close the connection to the db
