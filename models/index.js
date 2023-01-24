@@ -44,7 +44,9 @@ export async function getAll () {
 export async function postListItem (userID, productName) {
 
 
+
     const result = await pool.query('INSERT INTO user_products (product_name, user_id) VALUES ($1,$2) RETURNING*;', [productName, userID]);
+
     return result.rows
 }
 
