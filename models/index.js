@@ -58,7 +58,7 @@ export async function getUserProductList (userID) {
 
 export async function deleteListItem(userID, productName) {
 
-    const result = await pool.query('DELETE FROM user_products WHERE user_id = $1 and product_name = $2', [userID, productName])
+    const result = await pool.query('DELETE FROM user_products WHERE user_id = $1 and product_name = $2 RETURNING *', [userID, productName])
     return result.rows
 }
 
