@@ -89,7 +89,7 @@ To run tests, run the following command
 ## Demo
 
 
-![App Gif](https://imgur.com/a/oPNyALl.mp4)
+![App Gif](https://imgur.com/a/oPNyALl.gif)
 
 
 
@@ -98,14 +98,14 @@ To run tests, run the following command
 - Dan[![Github Profile](https://img.shields.io/badge/Github-Profile-green.svg)](https://github.com/Cmndgrab)
 
 
-- Martha[![Github Profile](https://img.shields.io/badge/Github-Profile-blue.svg)](https://github.com/MarthaBennett)
+- Martha[![Github Profile]  (https://img.shields.io/badge/Github-Profile-blue.svg)](https://github.com/MarthaBennett)
 
-- Luke[![Github Profile](https://img.shields.io/badge/Github-Profile-orange.svg)](https://github.com/luke123adams)
+- Luke[![Github Profile]  (https://img.shields.io/badge/Github-Profile-orange.svg)](https://github.com/luke123adams)
 
-- Violeta[![Github Profile](https://img.shields.io/badge/Github-Profile-red.svg)](https://github.com/violetacf)
+- Violeta[![Github Profile]  (https://img.shields.io/badge/Github-Profile-red.svg)](https://github.com/violetacf)
 
-- Rachel[![Github Profile](https://img.shields.io/badge/Github-Profile-purple.svg)](https://github.com/rachvm)
+- Rachel[![Github Profile]  (https://img.shields.io/badge/Github-Profile-purple.svg)](https://github.com/rachvm)
 
 
-- Steve[![Github Profile](https://img.shields.io/badge/Github-Profile-maroon.svg)](https://github.com/Sunbearian)
+- Steve[![Github Profile]  (https://img.shields.io/badge/Github-Profile-maroon.svg)](https://github.com/Sunbearian)
 
